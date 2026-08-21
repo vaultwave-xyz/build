@@ -32,3 +32,21 @@ jobs:
           node-version: 22
       - name: Validate production SEO
         run: npm run test:production
+
+  lighthouse:
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+      - name: Run Lighthouse accessibility, SEO and performance budgets
+        run: npx --yes @lhci/cli@0.15.1 autorun
+      - name: Preserve Lighthouse reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-reports
+          path: .lighthouseci
+          retention-days: 30
