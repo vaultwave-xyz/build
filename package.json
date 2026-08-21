@@ -5,6 +5,7 @@
     "build":"node scripts/build-pages.mjs",
     "test":"node scripts/validate-site.mjs",
     "test:render":"node scripts/render-check.cjs",
+    "test:production":"node scripts/production-check.mjs",
     "indexnow":"node scripts/submit-indexnow.mjs"
   }
 }
