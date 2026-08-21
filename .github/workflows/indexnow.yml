@@ -1,0 +1,29 @@
+name: Submit canonical URLs to IndexNow
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Submit Vaultwave canonical URLs
+        shell: bash
+        run: |
+          set -euo pipefail
+          payload='{"host":"vaultwave.agency","key":"e01c9b0f009245f1b9016355c982f5bb","keyLocation":"https://vaultwave.agency/e01c9b0f009245f1b9016355c982f5bb.txt","urlList":["https://vaultwave.agency/","https://vaultwave.agency/about/","https://vaultwave.agency/services/","https://vaultwave.agency/services/strategy-intelligence/","https://vaultwave.agency/services/creative-production/","https://vaultwave.agency/services/media-pr-activation/","https://vaultwave.agency/services/digital-technology/","https://vaultwave.agency/work/","https://vaultwave.agency/leadership/","https://vaultwave.agency/insights/","https://vaultwave.agency/contact/"]}'
+          status=$(curl --silent --show-error --output response.txt --write-out '%{http_code}' \
+            --request POST 'https://api.indexnow.org/indexnow' \
+            --header 'Content-Type: application/json; charset=utf-8' \
+            --data "$payload")
+          cat response.txt
+          case "$status" in
+            200|202) echo "IndexNow accepted 11 canonical URLs with HTTP $status." ;;
+            *) echo "IndexNow submission failed with HTTP $status." >&2; exit 1 ;;
+          esac
+
