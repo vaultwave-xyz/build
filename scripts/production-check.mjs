@@ -1,16 +1,16 @@
 const origin = 'https://vaultwave.agency';
 
 const pages = [
-  ['/', 'Advertising & Marketing Agency in Kampala | Vaultwave'],
-  ['/about/', 'About Vaultwave | Growth & Creative Agency in Kampala'],
-  ['/services/', 'Advertising & Marketing Services in Uganda | Vaultwave'],
-  ['/services/strategy-intelligence/', 'Brand & Marketing Strategy in Uganda | Vaultwave'],
-  ['/services/creative-production/', 'Creative & Video Production in Kampala | Vaultwave'],
-  ['/services/media-pr-activation/', 'Media Buying, PR & Activations in Uganda | Vaultwave'],
-  ['/services/digital-technology/', 'Web Design & Digital Technology in Uganda | Vaultwave'],
-  ['/work/', 'Selected Work & Case Study Framework | Vaultwave'],
+  ['/', 'Advertising &amp; Marketing Agency in Kampala | Vaultwave'],
+  ['/about/', 'About Vaultwave | Growth &amp; Creative Agency in Kampala'],
+  ['/services/', 'Advertising &amp; Marketing Services in Uganda | Vaultwave'],
+  ['/services/strategy-intelligence/', 'Brand &amp; Marketing Strategy in Kampala | Vaultwave'],
+  ['/services/creative-production/', 'Creative, Video &amp; Brand Production in Kampala | Vaultwave'],
+  ['/services/media-pr-activation/', 'Media Buying, PR &amp; Activations in Uganda | Vaultwave'],
+  ['/services/digital-technology/', 'Web Design &amp; Development Agency in Kampala | Vaultwave'],
+  ['/work/', 'Selected Creative &amp; Production Work | Vaultwave'],
   ['/leadership/', 'Vaultwave Leadership Team | Kampala, Uganda'],
-  ['/insights/', 'Marketing & Advertising Insights for Uganda | Vaultwave'],
+  ['/insights/', 'Marketing Insights &amp; Resources for Uganda | Vaultwave'],
   ['/contact/', 'Contact Vaultwave | Advertising Agency in Kampala'],
 ];
 
