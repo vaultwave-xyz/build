@@ -197,8 +197,12 @@ Avoid creating separate pages for every Kampala suburb or unsupported country. T
 
 ## Remaining blockers and verification
 
-- Deployment access is not yet confirmed. Production cannot be verified until this repository is connected to the host or deployed manually.
+- Repository validation passed on 2026-08-21: 11 HTML pages, 11 unique titles, 11 unique canonical URLs, parseable JSON-LD, valid local file references and all required crawler assets.
+- Headless rendering passed at 1440 x 900 and 390 x 844: one homepage H1, correct title, working images and no browser console errors.
+- The implementation was published to `vaultwave-xyz/build` on branch `main` at commit `2fd0bf315aa93685f3c31b79d63a7c83df42fc0c`.
+- Production verification immediately after publication showed that `vaultwave.agency` had not deployed this repository. `/robots.txt`, `/sitemap.xml` and `/about/` still returned the old homepage HTML with `text/html` and status 200. The hosting project must be connected to this repository and configured to deploy the repository root.
 - Google, Bing, Apple and analytics account actions require owner access and real verification tokens or IDs.
 - A street address, business hours and broader service countries remain intentionally absent because they were not verified.
 - No Article, VideoObject, Review, AggregateRating, FAQ, award or newsroom schema was added because eligible supported content does not yet exist.
 - Real-user Core Web Vitals require Search Console/CrUX data after sufficient production traffic. Lab tests are useful diagnostics, not substitutes for field data.
+
