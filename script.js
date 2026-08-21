@@ -1,4 +1,10 @@
-const $=(s,c=document)=>c.querySelector(s), $$=(s,c=document)=>[...c.querySelectorAll(s)];
+const $=(s,c=document)=>c.querySelector(s), $=(s,c=document)=>[...c.querySelectorAll(s)];
+const cleanPageUrl=()=>`${location.pathname}${location.search}`;
+const scrollToSection=(targetId,focus=false)=>{const target=document.getElementById(targetId);if(!target)return;target.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});if(focus){target.setAttribute('tabindex','-1');target.focus({preventScroll:true});target.addEventListener('blur',()=>target.removeAttribute('tabindex'),{once:true})}history.replaceState(null,'',cleanPageUrl())};
+$('[data-scroll-target]').forEach(link=>link.addEventListener('click',event=>{event.preventDefault();scrollToSection(link.dataset.scrollTarget,link.classList.contains('skip-link'))}));
+const clearRequestedFragment=()=>{if(!location.hash)return;const requested=decodeURIComponent(location.hash.slice(1));requestAnimationFrame(()=>scrollToSection(requested))};
+clearRequestedFragment();
+addEventListener('hashchange',clearRequestedFragment);
 const header=$('[data-header]'), menu=$('.menu-button'), nav=$('.site-nav');
 const themeToggle=$('.theme-toggle'), themeMeta=$('meta[name="theme-color"]');
 const syncThemeControl=()=>{const dark=document.documentElement.dataset.theme==='dark';themeToggle.setAttribute('aria-pressed',String(dark));themeToggle.setAttribute('aria-label',`Switch to ${dark?'light':'dark'} mode`);themeMeta.setAttribute('content',dark?'#050d18':'#ffffff')};
