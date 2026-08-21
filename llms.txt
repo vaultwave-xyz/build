@@ -1,0 +1,11 @@
+# Vaultwave
+
+> Vaultwave is an advertising, marketing, growth and creative agency led from Kampala, Uganda.
+
+Canonical website: https://vaultwave.agency/
+Services: https://vaultwave.agency/services/
+About: https://vaultwave.agency/about/
+Leadership: https://vaultwave.agency/leadership/
+Contact: https://vaultwave.agency/contact/
+
+Vaultwave connects strategy, creative execution, media, digital technology and measurement in one accountable relationship. This file is a nonessential orientation aid. The HTML pages, structured data, robots.txt and sitemap remain authoritative.

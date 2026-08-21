@@ -1,0 +1,10 @@
+{
+  "name":"vaultwave-agency-site",
+  "private":true,
+  "scripts":{
+    "build":"node scripts/build-pages.mjs",
+    "test":"node scripts/validate-site.mjs",
+    "test:render":"node scripts/render-check.cjs",
+    "indexnow":"node scripts/submit-indexnow.mjs"
+  }
+}
