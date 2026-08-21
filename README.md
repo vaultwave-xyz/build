@@ -6,7 +6,7 @@ Production source for [vaultwave.agency](https://vaultwave.agency/). The site is
 
 - `npm run build` regenerates the core content pages from `scripts/build-pages.mjs`.
 - `npm test` validates metadata, canonical uniqueness, JSON-LD syntax, internal file references and required crawler assets.
-- `npm run indexnow` submits canonical URLs after a successful production deployment. Do not run it before the IndexNow key file is publicly reachable.
+- `npm run test:production` validates production status codes, content types, canonical metadata, crawler files, the IndexNow key and genuine 404 handling.\n- `npm run indexnow` submits canonical URLs after a successful production deployment. Do not run it before the IndexNow key file is publicly reachable.
 
 ## Verification and analytics hooks
 
@@ -15,3 +15,4 @@ Do not invent tokens or IDs. When available, add the exact Google Search Console
 ## Deployment
 
 Configure the host to deploy the repository root. `_redirects` and `_headers` are included for Cloudflare Pages-compatible hosting. After deployment, verify `/robots.txt`, `/sitemap.xml`, all canonical pages, response codes, headers and the IndexNow key file on production.
+\nCloudflare Pages automatically deploys `main`. GitHub Actions validates repository SEO on every push and pull request. A scheduled production check runs monthly on the first day of the month and can also be started manually from the Actions tab.\n
